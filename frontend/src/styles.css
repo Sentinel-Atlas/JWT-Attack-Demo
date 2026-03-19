@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+:root {
+  --bg:#08090f;--surface:#0f1117;--surface2:#161820;--border:#1e2130;--border-act:#2d3350;--accent:#4f8ef7;
+  --red:#f74f6b;--green:#3dd68c;--yellow:#f7c948;--cyan:#4fd1f7;--str-green:#7ec98f;--num-orange:#f7a24f;
+  --text:#d0d6e8;--text2:#6b7494;
+}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif}
+.app-shell{max-width:1200px;margin:0 auto;padding:24px}.layout{display:grid;grid-template-columns:2fr 3fr;gap:16px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--border);padding:14px;border-radius:10px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+textarea{width:100%;min-height:140px;background:var(--surface2);color:var(--text);border:1px solid var(--border);padding:10px;font-family:'IBM Plex Mono',monospace;resize:none}
+textarea.invalid{border-color:var(--red)}
+.controls{display:flex;gap:8px;margin-top:8px}button,select{background:var(--surface2);color:var(--text);border:1px solid var(--border);padding:6px 10px}
+.result-badge{display:inline-block;padding:4px 10px;border-radius:999px;font-weight:600}.result-badge.vulnerable{background:var(--red);color:#fff;animation:pulse 1.6s infinite}.result-badge.secure{background:var(--green);color:#fff}.result-badge.unknown{background:var(--yellow);color:#222}
+.tabs{display:flex;gap:8px;margin-bottom:10px}.tabs button.active{border-bottom:2px solid var(--accent)}
+.steps-list li{opacity:0;transform:translateY(8px);animation:fadeIn .35s forwards;font-family:'IBM Plex Mono',monospace}
+.token-block, pre{background:var(--surface2);padding:10px;border-radius:6px;overflow:auto;font-family:'IBM Plex Mono',monospace}
+.warn{color:var(--red)}.error{color:var(--red);margin-top:6px}.meta{color:var(--text2);font-size:.9rem}.secret{background:rgba(247,79,107,.12);border:1px solid var(--red);padding:8px;border-radius:6px}
+.issues-table{width:100%;border-collapse:collapse}.issues-table th,.issues-table td{border:1px solid var(--border);padding:6px;text-align:left}
+.mitre-tag{display:inline-block;margin-top:8px;color:var(--cyan);text-decoration:none}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}@keyframes pulse{50%{filter:brightness(1.15)}}
